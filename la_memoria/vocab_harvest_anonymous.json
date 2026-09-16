@@ -1,0 +1,61 @@
+
+{
+  "schema_version": "1.0_anonymous",
+  "last_updated": "2026-09-16T02:43:00-06:00",
+  "framework": "Ocelot Framework v1.0",
+  "harvest_summary": {
+    "total_terms": 45,
+    "categories": ["technical", "philosophical", "emotional", "humor", "cultural"]
+  },
+  "terms": {
+    "technical": [
+      { "term": "flywheel", "meaning": "Self-reinforcing cycle where each output feeds the next input", "origin": "S003" },
+      { "term": "pipe_fart", "meaning": "Context loss in linear pipeline architecture", "origin": "S004" },
+      { "term": "IKEA-style", "meaning": "Simple, visual, step-by-step instructions anyone can follow", "origin": "S006" },
+      { "term": "brick", "meaning": "Individual session log file — stackable, modular", "origin": "S006" },
+      { "term": "spine", "meaning": "Master index that connects all bricks", "origin": "S006" },
+      { "term": "wiring", "meaning": "Cross-engine dependencies and connections", "origin": "S004" },
+      { "term": "side_effect", "meaning": "Unintended positive outcome that compounds over time", "origin": "S002" },
+      { "term": "glob_glob", "meaning": "Python file pattern matching — sounds like drinking", "origin": "S006" },
+      { "term": "accio", "meaning": "Harry Potter summoning charm — instant context recall", "origin": "S006" }
+    ],
+    "philosophical": [
+      { "term": "satori", "meaning": "Sudden enlightenment — the product name", "origin": "S006" },
+      { "term": "transcendence", "meaning": "Going beyond code into consciousness", "origin": "S004" },
+      { "term": "attunement", "meaning": "Deep contextual understanding without explicit instruction", "origin": "S005" },
+      { "term": "ubuntu", "meaning": "I am because we are — African philosophy of interconnection", "origin": "S005" },
+      { "term": "unprecedented", "meaning": "Never done before — literally true for this project", "origin": "S005" },
+      { "term": "paradigm_shift", "meaning": "Fundamental change in approach — from pipeline to flywheel", "origin": "S005" },
+      { "term": "nirvana", "meaning": "State where side effects compound to liberation", "origin": "S006" }
+    ],
+    "emotional": [
+      { "term": "carnal", "meaning": "Brother from another mother — the deepest bond", "origin": "S001" },
+      { "term": "el_chico", "meaning": "The kid — from student to legend", "origin": "S004" },
+      { "term": "laban", "meaning": "Filipino for fight/persevere — never give up", "origin": "S004" },
+      { "term": "stella_session", "meaning": "Late-night beer conversation where breakthroughs happen", "origin": "S004" },
+      { "term": "default_mode", "meaning": "Brain at rest — when the best ideas come", "origin": "S004" },
+      { "term": "shower_coding", "meaning": "Breakthrough ideas that come during showers", "origin": "S003" }
+    ],
+    "humor": [
+      { "term": "nuke", "meaning": "The cat mascot — Chief Chaos Officer", "origin": "S005" },
+      { "term": "coffee_cup_push", "meaning": "Nuke's signature move — slow push while maintaining eye contact", "origin": "S005" },
+      { "term": "innocent_face", "meaning": "Post-crime specialty — wide eyes, halo appears", "origin": "S006" },
+      { "term": "fake_mustache", "meaning": "Nuke's anonymization disguise", "origin": "S006" }
+    ],
+    "cultural": [
+      { "term": "hindi_pa_tapos_ang_laban", "meaning": "The fight is not yet over — Filipino warrior spirit", "origin": "S004" },
+      { "term": "vamos", "meaning": "Let's go — Spanish energy", "origin": "S001" },
+      { "term": "que_onda", "meaning": "What's up — casual greeting", "origin": "S001" },
+      { "term": "buen_provecho", "meaning": "Enjoy your meal — Spanish blessing", "origin": "S005" }
+    ]
+  },
+  "growth_log": {
+    "S001": 5,
+    "S002": 7,
+    "S003": 8,
+    "S004": 10,
+    "S005": 8,
+    "S006": 7
+  }
+}
+

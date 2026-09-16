@@ -1,0 +1,38 @@
+
+{
+  "schema_version": "1.0_anonymous",
+  "last_updated": "2026-09-16T02:43:00-06:00",
+  "framework": "Ocelot Framework v1.0",
+  "license": "GPL-3.0",
+  "principles": {
+    "source_of_truth": "Cloud repository is the ONLY source of truth",
+    "rebuild_over_patch": "When in doubt, rebuild from source — don't patch",
+    "audit_after_milestone": "Every milestone gets a full audit before proceeding",
+    "no_memory_trust": "Never trust chat memory — always pull from cloud"
+  },
+  "file_standards": {
+    "naming_convention": {
+      "json": "snake_case.json",
+      "engines": "engine_name_generic.ts.md",
+      "docs": "UPPERCASE.md (README, CHANGELOG, QUICKSTART, etc.)"
+    },
+    "wrapper_policy": "All .ts, .tsx, .py files must be wrapped in .md for cloud storage",
+    "versioning": "schema_version field in every JSON file"
+  },
+  "change_management": {
+    "process": "PDCA — Plan, Do, Check, Act",
+    "approval": "Human confirms before any overwrite",
+    "rollback": "Previous versions preserved in cloud history"
+  },
+  "artifact_policy": {
+    "max_size": "Single artifact per deliverable when possible",
+    "chunking": "If too large, split into numbered parts (Part 1/2, Part 2/2)",
+    "merge_protocol": "Use merge_chunks.py.md for reassembly"
+  },
+  "security": {
+    "ip_stripping": "All Amazon/corporate IP must be removed before public push",
+    "anonymization": "Personal names replaced with aliases",
+    "private_data": "Memoir files go in private repo only"
+  }
+}
+
