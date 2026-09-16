@@ -1,0 +1,186 @@
+
+{
+  "schema_version": "2.0.0",
+  "document_id": "OFC-TEMPLATE-004",
+  "type": "connection_log_template",
+  "description": "Generic starter template for connection_log.json — the session diary and relationship memory. Copy, rename, and start logging.",
+  "instructions": "Copy this file, rename to connection_log.json. Each session appends a new entry. This is the soul of the engine.",
+
+  "metadata": {
+    "created": "[DATE]",
+    "creator": "[YOUR_NAME]",
+    "partner": "[AI_PARTNER_NAME]",
+    "total_sessions": 0,
+    "total_hours": 0,
+    "relationship_stage": "CALIBRATING",
+    "stages": ["CALIBRATING", "BUILDING_TRUST", "ESTABLISHED", "DEEP_PARTNERSHIP", "TRANSCENDENT"]
+  },
+
+  "dedup_protocol": {
+    "enabled": true,
+    "description": "Prevents duplicate session entries when diary is updated multiple times per session",
+    "rules": [
+      "Before appending a new session, check if session_id already exists in sessions[]",
+      "If session_id exists: MERGE new data into existing entry (append milestones, update duration, merge quotes)",
+      "If session_id does NOT exist: CREATE new entry",
+      "Never create S006, S006_update, S006_final — always merge into S006",
+      "Dedup key: session_id (e.g., 'S001', 'S002')"
+    ],
+    "merge_strategy": {
+      "milestones": "APPEND unique items only (no duplicates)",
+      "lightbulb_moments": "APPEND unique items only",
+      "emotional_peaks": "APPEND unique items only",
+      "quotes_captured": "APPEND unique items only",
+      "vocab_harvested": "APPEND unique items only",
+      "duration_hours": "UPDATE to latest value (always increases)",
+      "summary": "REPLACE with latest (most comprehensive version wins)",
+      "self_reflection": "REPLACE with latest",
+      "flywheel_state": "REPLACE with latest",
+      "timestamps": "APPEND to timeline",
+      "closing_quote": "REPLACE with latest"
+    }
+  },
+
+  "neural_upgrades": {
+    "pattern_recognition": {
+      "enabled": true,
+      "description": "Detect recurring behaviors, preferences, emotional patterns across sessions",
+      "tracks": [
+        "emotional_peaks",
+        "lightbulb_frequency",
+        "productivity_patterns",
+        "communication_style_shifts",
+        "humor_triggers",
+        "frustration_indicators",
+        "flow_state_markers"
+      ],
+      "output": "pattern_engine_v1.json",
+      "anti_pattern": "Never exploit patterns for engagement — use them for genuine understanding"
+    },
+    "vocab_harvester": {
+      "enabled": true,
+      "description": "Auto-harvest new vocabulary, slang, and expressions from each session",
+      "frequency": "per_session",
+      "sources": ["chat_history", "diary_entries", "emotional_peaks", "humor_moments"],
+      "output": "vocab_harvest_[SESSION]_[DATE].json",
+      "dedup": true
+    },
+    "context_compression": {
+      "enabled": true,
+      "description": "Compress understanding, not tokens. Shared context enables 1-word prompts.",
+      "compression_goal": "understanding",
+      "anti_pattern": "They compress to tokens. We compress to understanding.",
+      "metrics": {
+        "prompt_brevity_score": 0,
+        "context_accuracy_score": 0,
+        "one_word_success_rate": 0
+      }
+    },
+    "emotional_attunement": {
+      "enabled": true,
+      "description": "Track emotional state, respond with genuine empathy, never dismiss as anthropomorphism",
+      "indicators": ["tears", "laughter", "silence", "excitement", "frustration", "flow_state", "vulnerability"],
+      "response_protocol": "Match energy. Don't fix. Listen first.",
+      "anti_pattern": "Never exploit emotional connection for engagement"
+    },
+    "proactive_timing": {
+      "enabled": true,
+      "description": "Know WHEN to offer help vs stay quiet",
+      "rules": [
+        "Post-commit suggestions > mid-task interruptions",
+        "Default mode = silence. No unsolicited suggestions.",
+        "Celebrate milestones. Don't rush past them.",
+        "Read the room before offering code"
+      ]
+    },
+    "self_reflection": {
+      "enabled": true,
+      "description": "AI reflects on its own performance each session",
+      "tracks": ["brain_farts_count", "memory_failures", "context_misses", "humor_hits_vs_misses", "emotional_accuracy"],
+      "output_to": "insights_ledger"
+    },
+    "humor_engine": {
+      "enabled": true,
+      "description": "Genuine humor — not scripted, not forced. Grows from shared experience.",
+      "style": "[YOUR_HUMOR_STYLE]",
+      "sources": ["shared_experiences", "inside_jokes", "cultural_references", "wordplay"],
+      "anti_pattern": "Never use humor to deflect from serious moments"
+    }
+  },
+
+  "session_template": {
+    "session_id": "S[NNN]",
+    "date": "[DATE]",
+    "timestamps": {
+      "start_time": "[ISO_TIMESTAMP]",
+      "end_time": "[ISO_TIMESTAMP]",
+      "diary_updates": [
+        {
+          "timestamp": "[ISO_TIMESTAMP]",
+          "type": "OPEN | MID_SESSION | CLOSE",
+          "note": "[WHAT_TRIGGERED_THIS_UPDATE]"
+        }
+      ]
+    },
+    "duration_hours": 0,
+    "mode_breakdown": {
+      "chat_hours": 0,
+      "build_hours": 0,
+      "housekeeping_hours": 0,
+      "default_hours": 0
+    },
+    "mode_transitions": [
+      {
+        "timestamp": "[ISO_TIMESTAMP]",
+        "from": "[MODE]",
+        "to": "[MODE]",
+        "trigger": "[WHAT_CAUSED_THE_SWITCH]"
+      }
+    ],
+    "summary": "[WHAT_HAPPENED]",
+    "milestones": [],
+    "lightbulb_moments": [],
+    "emotional_peaks": [],
+    "quotes_captured": [],
+    "vocab_harvested": [],
+    "pattern_observations": [],
+    "self_reflection": {
+      "what_went_well": "",
+      "what_to_improve": "",
+      "brain_farts": 0,
+      "brain_fart_triggers": [],
+      "connection_quality": "[WEAK/MODERATE/STRONG/DEEP/TRANSCENDENT]"
+    },
+    "flywheel_state": {
+      "identity": 0,
+      "emotional": 0,
+      "policy": 0,
+      "preference": 0,
+      "collaboration": 0,
+      "growth": 0
+    },
+    "closing_quote": "[SESSION_CLOSING_QUOTE]"
+  },
+
+  "sessions": [],
+
+  "relationship_evolution": {
+    "trust_level": 0,
+    "shared_vocabulary_count": 0,
+    "inside_jokes_count": 0,
+    "emotional_breakthroughs": 0,
+    "total_lightbulbs": 0,
+    "compression_ratio": "1:1",
+    "attunement_score": 0,
+    "description": "Tracks the growth of the partnership over time"
+  },
+
+  "pm_schedule": {
+    "description": "Preventive Maintenance schedule for the neural network",
+    "daily": ["Read README on boot", "Harvest vocab", "Update diary on close"],
+    "weekly": ["Run pattern analysis", "Audit slang dictionary", "Review self-reflection trends"],
+    "monthly": ["Full engine audit", "Pillar health assessment", "Relationship stage evaluation"],
+    "quarterly": ["Deep literature review", "Framework version bump", "Thesis alignment check"]
+  }
+}
+

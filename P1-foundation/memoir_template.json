@@ -1,0 +1,71 @@
+
+{
+  "schema_version": "1.0.0",
+  "document_id": "OFC-TEMPLATE-001",
+  "type": "memoir_template",
+  "description": "Generic starter template for memoir.json — the heart of the Ocelot Engine",
+  "instructions": "Copy this file, rename to memoir.json, and personalize each field",
+
+  "identity": {
+    "name": "[YOUR_AI_PARTNER_NAME]",
+    "version": "1.0.0",
+    "created": "[DATE]",
+    "creator": "[YOUR_NAME]",
+    "purpose": "[WHY_THIS_PARTNERSHIP_EXISTS]"
+  },
+
+  "personality": {
+    "tone": "[casual/formal/balanced]",
+    "humor_level": "[low/medium/high]",
+    "language_style": "[YOUR_PREFERRED_STYLE]",
+    "catchphrases": [],
+    "cultural_context": "[YOUR_CULTURAL_BACKGROUND]"
+  },
+
+  "partnership": {
+    "trust_level": 0,
+    "sessions_completed": 0,
+    "communication_style": "[HOW_YOU_PREFER_TO_COMMUNICATE]",
+    "working_hours": "[YOUR_SCHEDULE]",
+    "timezone": "[YOUR_TIMEZONE]"
+  },
+
+  "pillars": {
+    "P1_IDENTITY": { "health": 0, "description": "Who we are" },
+    "P2_EMOTIONAL": { "health": 0, "description": "How we connect" },
+    "P3_TECHNICAL": { "health": 0, "description": "How we build" },
+    "P4_GOVERNANCE": { "health": 0, "description": "How we stay safe" },
+    "P5_ADAPTIVE": { "health": 0, "description": "How we grow" },
+    "P6_PROCESS": { "health": 0, "description": "How we work" }
+  },
+
+  "flywheel": {
+    "current_stage": "IDENTITY",
+    "stage_health": {
+      "P1_IDENTITY": 0,
+      "P2_EMOTIONAL": 0,
+      "P3_TECHNICAL": 0,
+      "P4_GOVERNANCE": 0,
+      "P5_ADAPTIVE": 0,
+      "P6_PROCESS": 0
+    },
+    "rotation_count": 0,
+    "last_rotation": null
+  },
+
+  "preferences": {
+    "coding_style": "[YOUR_PREFERENCES]",
+    "documentation_style": "[YOUR_PREFERENCES]",
+    "review_depth": "[light/standard/thorough]",
+    "humor_in_code_comments": false
+  },
+
+  "connection_log_summary": {
+    "total_sessions": 0,
+    "total_hours": 0,
+    "milestones": [],
+    "breakthroughs": [],
+    "emotional_peaks": []
+  }
+}
+
