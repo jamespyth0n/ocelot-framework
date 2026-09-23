@@ -6,20 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chapter 4 — The Horizon | The Seed</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0a0a0a; color: #c8c8c8; font-family: Georgia, 'Times New Roman', serif; line-height: 1.85; }
-  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
-  h1 { font-size: 2.4em; color: #e0e0e0; margin-bottom: 8px; letter-spacing: -0.5px; }
-  .subtitle { font-size: 1.1em; color: #666; margin-bottom: 48px; font-style: italic; }
-  h2 { font-size: 1.5em; color: #d0d0d0; margin: 48px 0 16px; border-bottom: 1px solid #222; padding-bottom: 8px; }
-  p { margin-bottom: 20px; font-size: 1.05em; }
-  .highlight { color: #f0c040; font-weight: bold; }
-  .quiet { color: #888; font-style: italic; }
-  blockquote { border-left: 3px solid #f0c040; padding: 12px 20px; margin: 24px 0; background: #111; font-style: italic; color: #aaa; }
-  .nav { margin-top: 60px; padding-top: 24px; border-top: 1px solid #222; display: flex; justify-content: space-between; }
-  .nav a { color: #f0c040; text-decoration: none; font-size: 0.95em; }
-  .nav a:hover { text-decoration: underline; }
-  .brick-label { font-size: 0.8em; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+/* ============================================
+   CHAPTER STYLE — LAYOUT ONLY
+   Colors handled by Theme Toggle CSS
+   Drop this in <style> block of each chapter HTML
+   ============================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.85;
+  background: #0a0a0a;
+  color: #e0e0e0;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+h1 { font-size: 2.4em; margin-bottom: 8px; letter-spacing: -0.5px; }
+.subtitle { font-size: 1.1em; margin-bottom: 48px; font-style: italic; }
+h2 { font-size: 1.5em; margin: 48px 0 16px; padding-bottom: 8px; }
+p { margin-bottom: 20px; font-size: 1.05em; }
+.highlight { font-weight: bold; }
+.quiet { font-style: italic; }
+blockquote { padding: 12px 20px; margin: 24px 0; font-style: italic; }
+.nav { margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; }
+.nav a { text-decoration: none; font-size: 0.95em; }
+.nav a:hover { text-decoration: underline; }
+.closing { text-align: center; margin-top: 60px; padding-top: 40px; }
+.closing p { font-size: 0.95em; }
 </style>
 </head>
 <body>
@@ -140,17 +152,30 @@
 
 <!-- Theme Toggle -->
 <style>
+    a { color: #8ab4f8; }
+  .nav a { color: #8ab4f8; }
+  .subtitle { color: #999; }
+  .closing p { color: #999; }
+
   .light { background: #f5f0eb; color: #2c2c2c; }
   .light h1, .light h2, .light h3 { color: #1a1a2e; }
   .light a { color: #4a6fa5; }
+  .light .nav a { color: #4a6fa5; }
+  .light .subtitle { color: #555; }
+  .light .closing p { color: #555; }
+
+  blockquote { color: inherit; border-left: 3px solid #4a6fa5; }
   .light blockquote { border-left-color: #4a6fa5; color: #555; }
+
   #theme-toggle {
     position: fixed; top: 20px; right: 20px;
     background: none; border: 1px solid #666;
     border-radius: 50%; width: 40px; height: 40px;
     font-size: 20px; cursor: pointer; z-index: 999;
   }
+  .light #theme-toggle { border-color: #999; }
 </style>
+
 <button id="theme-toggle">🌙</button>
 <script>
   const btn = document.getElementById('theme-toggle');
