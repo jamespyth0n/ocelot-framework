@@ -77,5 +77,5 @@ The code is the seed. What grows from it is yours.
 Clone the repo. Read the phases. Start at P1. Each phase builds on the last.
 
 ```bash
-git clone https://github.com/[your-username]/ocelot-framework.git
+git clone https://github.com/jamespyth0n/ocelot-framework.git
 
