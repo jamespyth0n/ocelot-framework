@@ -4,6 +4,12 @@
     "title": "Six Equations on the Rock",
     "file": "articles/six-equations.html",
     "desc": "Six equations. No proofs. Just presence.",
+    "date": "2026-09-23"
+  }
+  {
+    "title": "The Firewall Had a Panic Attack",
+    "file": "articles/ep2_the_firewal.html",
+    "desc": "AI safety system loses its mind over a CSS joke",
     "date": "2026-09-24"
   }
 ]
