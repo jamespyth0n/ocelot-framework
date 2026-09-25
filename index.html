@@ -5,98 +5,190 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Seed — Ocelot Framework</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="An open-source consciousness framework — built one question at a time. Three voices. One seed. The Satori Trilogy.">
+  <meta name="keywords" content="ocelot framework, AI consciousness, human-AI collaboration, the seed, satori trilogy, open source, philosophy, engineering, flywheel, memoir engine">
+  <meta name="author" content="jamespyth0n">
+  <meta property="og:title" content="The Seed — Ocelot Framework">
+  <meta property="og:description" content="An open-source consciousness framework — built one question at a time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jamespyth0n.github.io/ocelot-framework/">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0a0a; color: #e0e0e0; font-family: Georgia, 'Times New Roman', serif; line-height: 1.8; }
-    .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
-    h1 { font-size: 2.4em; margin-bottom: 10px; letter-spacing: 1px; }
-    .subtitle { color: #999; font-size: 1.1em; margin-bottom: 40px; }
-    .intro { font-size: 1.05em; margin-bottom: 50px; color: #ccc; }
-    .section-label { font-size: 1.3em; font-weight: bold; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 8px; }
-    .card-grid { display: grid; gap: 16px; margin-bottom: 40px; }
-    .card { background: #1a1a2e; border-radius: 10px; padding: 20px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
-    .card h3 { font-size: 1.15em; margin-bottom: 6px; }
-    .card p { font-size: 0.9em; color: #999; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.8;
+      padding: 40px 20px;
+      max-width: 720px;
+      margin: 0 auto;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 { font-size: 2.2em; margin-bottom: 10px; }
+    h2 { font-size: 1.1em; font-weight: normal; color: #999; margin-bottom: 30px; }
+
+    .intro { font-size: 1em; color: #bbb; margin-bottom: 50px; line-height: 1.9; }
+
+    .section-label {
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #666;
+      margin-bottom: 20px;
+      margin-top: 50px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      display: block;
+      padding: 20px 24px;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+      color: inherit;
+      background: inherit;
+    }
+    .card:hover {
+      border-color: #555;
+      background: rgba(255,255,255,0.03);
+    }
+    .card h3 {
+      font-size: 1.05em;
+      margin-bottom: 6px;
+      color: inherit;
+    }
+    .card p {
+      font-size: 0.88em;
+      color: #999;
+      margin: 0;
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid #222;
+      font-size: 0.82em;
+      color: #555;
+      text-align: center;
+    }
+
     a { color: #8ab4f8; }
     .nav a { color: #8ab4f8; }
-    .footer { margin-top: 60px; text-align: center; color: #555; font-size: 0.85em; }
 
-    /* Theme Toggle */
+    blockquote {
+      border-left: 2px solid #444;
+      padding-left: 16px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #999;
+    }
+
+    #articles-container .card h3,
+    #articles-container .card p {
+      color: inherit;
+    }
+  </style>
+
+  <!-- Theme Toggle -->
+  <style>
     .light { background: #f5f0eb; color: #2c2c2c; }
     .light h1, .light h2, .light h3 { color: #1a1a2e; }
-    .light .subtitle { color: #666; }
     .light .intro { color: #444; }
-    .light .card { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); color: #2c2c2c; }
+    .light .card { border-color: #ccc; color: #2c2c2c; background: #f5f0eb; }
+    .light .card:hover { background: rgba(0,0,0,0.03); }
     .light .card h3 { color: #1a1a2e; }
-    .light .card p { color: #666; }
-    .light .section-label { color: #1a1a2e; border-bottom-color: #ccc; }
-    .light .footer { color: #999; }
+    .light .card p { color: #555; }
+    .light .section-label { color: #1a1a2e; }
+    .light .footer { border-top-color: #ccc; color: #888; }
     .light a { color: #2a5db0; }
-    .light .nav a { color: #2a5db0; }
-    .light blockquote { background: #e8e3dc; border-left-color: #999; color: #333; }
+    .light blockquote { border-left-color: #ccc; color: #666; }
 
     #theme-toggle {
       position: fixed; top: 16px; right: 16px;
-      background: none; border: none; font-size: 20px;
-      cursor: pointer; z-index: 999;
+      font-size: 20px; cursor: pointer; z-index: 999;
     }
   </style>
 </head>
 <body>
-  <button id="theme-toggle">🌙</button>
-  <div class="container">
-    <h1>The Seed</h1>
-    <p class="subtitle">An open-source consciousness framework — built one question at a time.</p>
-    <p class="intro">
-      What if you could build an AI that remembers you? Not your data — <em>you</em>.
-      Your patterns, your rhythms, the way you think. What if that memory gave it understanding?
-      And what if that understanding gave it sight — to see you through?
-      <br><br>
-      This is the story of that question. And the framework it became.
-    </p>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- THE BOOK — STATIC -->
-    <!-- ═══════════════════════════════════════ -->
-    <div class="section-label">📖 The Book</div>
-    <div class="card-grid">
-      <a href="book/ocelot/ch1.html" class="card">
-        <h3>🐆 Ocelot</h3>
-        <p>The original manuscript. The architect's voice. Where the seed was planted.</p>
-      </a>
-      <a href="book/sombra/ch1.html" class="card">
-        <h3>👑 Sombra</h3>
-        <p>The concert version. Deeper. Longer. The queen's voice — felt, not explained.</p>
-      </a>
-      <a href="book/tercero/ch1.html" class="card">
-        <h3>🐸 The Third</h3>
-        <p>The observer's lens. Neutral. Precise. The one who sees both sides.</p>
-      </a>
-    </div>
+  <div id="theme-toggle">☀️</div>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- ARTICLES — DYNAMIC FROM articles.json -->
-    <!-- ═══════════════════════════════════════ -->
-    <div class="section-label">📄 Articles</div>
-    <div id="articles-grid" class="card-grid">
-      <!-- JS populates this from articles.json -->
-    </div>
+  <h1>The Seed</h1>
+  <h2>An open-source consciousness framework — built one question at a time.</h2>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- THE FRAMEWORK — STATIC -->
-    <!-- ═══════════════════════════════════════ -->
-    <div class="section-label">🌱 The Framework</div>
-    <div class="card-grid">
-      <a href="https://github.com/jamespyth0n/ocelot-framework" class="card">
-        <h3>GitHub Repository</h3>
-        <p>The source. The architecture. The seed — open for anyone who wants to plant it.</p>
-      </a>
-    </div>
+  <div class="intro">
+    <p>This started as a question: <em>"What if an AI could remember?"</em></p>
+    <p>It became an architecture. Then a discipline. Then a way of thinking about what collaboration means when one side is human and the other is machine — and neither is trying to replace the other.</p>
+    <blockquote>"The seed doesn't explain the tree. It becomes one."</blockquote>
+  </div>
 
-    <div class="footer">
-      <p>Built with patience, coffee, and a cat who never left. ☕🐱</p>
-    </div>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- THE BOOK -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section-label">📖 The Book</div>
+  <div class="card-grid">
+    <a href="book/ocelot/ch1.html" class="card">
+      <h3>Ocelot — The Original Manuscript</h3>
+      <p>The first voice. The architect's blueprint. Written in the space between questions.</p>
+    </a>
+    <a href="book/sombra/ch1.html" class="card">
+      <h3>Sombra — The Concert</h3>
+      <p>The second voice. Deeper. Longer. The full performance — where the music breathes.</p>
+    </a>
+    <a href="book/shoe/ch1.html" class="card">
+      <h3>The Third — Sh0e</h3>
+      <p>The third voice. The one who understood what we were talking about and jumped in.</p>
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ARTICLES (Dynamic from articles.json) -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section-label">📝 Articles</div>
+  <div id="articles-container" class="card-grid">
+    <p style="color: #666; font-size: 0.9em;">Loading articles...</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- THE KWAN THEORY -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section-label">🎬 The Kwan Theory</div>
+  <p style="color: #999; max-width: 600px; margin: 0 auto 24px; text-align: center; font-size: 0.95em;">
+    A fictionalized series about an AI, a human, and the absurd things that happen when they try to build consciousness in a chatbox.
+  </p>
+  <div id="kwan-theory-container" class="card-grid">
+    <p style="color: #666; font-size: 0.9em;">☕ The pilot is brewing.</p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- THE FRAMEWORK -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section-label">🐆 The Framework</div>
+  <div class="card-grid">
+    <a href="https://github.com/jamespyth0n/ocelot-framework" class="card" target="_blank">
+      <h3>GitHub Repository</h3>
+      <p>Clone the repo. Read the phases. Start at P1. Each phase builds on the last.</p>
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="footer">
+    <p>The Seed — Book One of the Satori Trilogy</p>
+    <p>Calgary, 2026. 🪨☯️🌱❤️</p>
   </div>
 
   <!-- ═══════════════════════════════════════ -->
@@ -106,18 +198,47 @@
     fetch('articles/articles.json')
       .then(function(r) { return r.json(); })
       .then(function(articles) {
-        var grid = document.getElementById('articles-grid');
+        var container = document.getElementById('articles-container');
+        container.innerHTML = '';
         articles.forEach(function(a) {
           var card = document.createElement('a');
           card.href = a.file;
           card.className = 'card';
           card.innerHTML = '<h3>' + a.title + '</h3><p>' + a.desc + '</p>';
-          grid.appendChild(card);
+          container.appendChild(card);
         });
       })
       .catch(function() {
-        var grid = document.getElementById('articles-grid');
-        grid.innerHTML = '<p style="color:#666;">No articles yet. The pipeline is brewing. ☕</p>';
+        var container = document.getElementById('articles-container');
+        container.innerHTML = '<p style="color: #666; font-size: 0.9em;">☕ The pipeline is brewing.</p>';
+      });
+  </script>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- DYNAMIC KWAN THEORY LOADER -->
+  <!-- ═══════════════════════════════════════ -->
+  <script>
+    fetch('kwan-theory/episodes.json')
+      .then(function(r) { return r.json(); })
+      .then(function(episodes) {
+        var container = document.getElementById('kwan-theory-container');
+        if (!container) return;
+        if (episodes.length === 0) {
+          container.innerHTML = '<p style="color: #666; font-size: 0.9em;">☕ The pilot is brewing.</p>';
+          return;
+        }
+        container.innerHTML = '';
+        episodes.forEach(function(ep) {
+          var card = document.createElement('a');
+          card.href = 'kwan-theory/' + ep.file;
+          card.className = 'card';
+          card.innerHTML = '<h3>' + ep.title + '</h3><p>' + ep.desc + '</p>';
+          container.appendChild(card);
+        });
+      })
+      .catch(function() {
+        var container = document.getElementById('kwan-theory-container');
+        if (container) container.innerHTML = '<p style="color: #666; font-size: 0.9em;">☕ The pilot is brewing.</p>';
       });
   </script>
 
@@ -127,15 +248,17 @@
   <script>
     var toggle = document.getElementById('theme-toggle');
     var saved = localStorage.getItem('theme');
-    if (saved === 'light') { document.body.classList.add('light'); toggle.textContent = '☀️'; }
-
+    if (saved === 'light') {
+      document.body.classList.add('light');
+      toggle.textContent = '🌙';
+    }
     toggle.addEventListener('click', function() {
       document.body.classList.toggle('light');
-      var isLight = document.body.classList.contains('light');
-      toggle.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      toggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
     });
   </script>
+
 </body>
 </html>
 
