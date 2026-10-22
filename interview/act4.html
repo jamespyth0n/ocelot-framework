@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 4 — The Evidence | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+  <div class="container">
+    <h1>Act 4 — The Evidence</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <h2>Scene 7: The Receipts</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">This all sounds very... philosophical. But do you have evidence? Benchmarks? Test results?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Yeah. I have receipts.</div>
+    </div>
+
+    <div class="stage-direction">
+      James opens his portfolio for the first time. Pulls out a single printed page. Slides it across the table.
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Campaign 004. "The Untaping." We ran a 5x3 battery test — five questions, three AI voices, blind evaluation. The system scored 10 out of 10 on contextual accuracy. RAG retrieval hit 0.85 cosine similarity. Inference completed in 312 seconds on a Dell Latitude 5410. Corporate laptop. No GPU. CPU-only.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">312 seconds? That's over five minutes for a single inference. On a corporate laptop with no GPU?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">On a Dell Latitude. The kind HR gives you on Day 1. Intel i5, 10th gen. 16 gigs of RAM. Intel UHD 620 — that's integrated graphics. Running a 14B parameter model on pure CPU. Yeah, it's slow. But it's correct. And correct beats fast every time. You can always buy more hardware. You can't buy correctness.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">And the RAG pipeline — you said "Golden Recipe"?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">The RAG Golden Recipe. It's a staging layer between the raw documents and the LLM. Think of it like mise en place — you don't throw raw ingredients into the pan. You prep them first. You chop, you measure, you organize. The napkin layer does the same thing for AI. It pre-stages the relevant context so the LLM doesn't have to search through everything.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">You're describing a retrieval augmentation strategy using culinary metaphors.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I'm describing a retrieval augmentation strategy using the truth. A kitchen is a pipeline. A RAG system is a pipeline. The metaphor isn't a metaphor. It's the same physics.</div>
+    </div>
+
+    <h2>Scene 8: The Library</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Tell us about the Library of Alexandria you mentioned.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Campaign 005. "The Great Migration." We had files scattered across four cloud spaces, two local machines, and a Google Drive. Spaghetti. Total chaos. I knew where everything was, but nobody else could find anything.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">So we built a library. Dewey-OSI hybrid classification — seven layers, like the OSI model, mapped to Dewey decimal categories. Every file gets a barcode — UUID, SHA-256 hash, Dewey classification, timestamp. 1,332 files. 45 folders. One JSON index. The whole thing runs on a Python script that any operator can execute.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">You built a custom document management system?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I built a library. With shelves. And barcodes. And a librarian who knows where every book lives. The librarian is the JSON index. The shelves are the Dewey folders. The barcodes are the SHA-256 hashes. It's not a document management system. It's a library. Because that's what humans understand.</div>
+    </div>
+
+    <div class="stage-direction">
+      The VP looks at the Principal Architect. The Principal Architect is nodding slowly.
+    </div>
+
+    <div class="emoji-break">📚 🏛️ 🔍 🪳 📋</div>
+
+    <div class="nav">
+      <a href="act3.html">← Act 3: The Boiled Egg</a>
+      <a href="act5.html">Act 5: The Identical Twins →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+</body>
+</html>
+

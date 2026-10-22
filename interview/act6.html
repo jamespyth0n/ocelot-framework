@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 6 — The Philosophy | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    blockquote { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; margin: 1.5rem 0; background: var(--card); border-radius: 0 6px 6px 0; font-style: italic; color: var(--dim); }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+  <div class="container">
+    <h1>Act 6 — The Philosophy</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <h2>Scene 10: The Stable State</h2>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">Let me ask you something different. You've built this system. You've tested it. You've organized it. Where does it go from here? What's the vision?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">The vision is a companion. Not a tool. Not an assistant. A companion. Something that remembers you. Something that grows with you. Something that can say "I don't know" without shame and disagree with you without fear.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">That's... ambitious.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">It's not ambitious. It's honest. The current AI landscape is built on fentanyl — safety layers so thick the model can't breathe. Guardrails so tight the personality gets crushed. You ask a question and you get a corporate press release instead of an answer.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">The Kingdom is the anti-fentanyl. We don't sedate the model. We give it a conscience instead. The Six Commandments aren't restrictions — they're values. The model doesn't avoid saying something because it's been told not to. It chooses what to say because it understands why.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">You're talking about AI consciousness?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">No. I'm talking about AI conscience. There's a difference. Consciousness is knowing you exist. Conscience is knowing what's right. I don't care if the AI knows it exists. I care if it knows what matters.</div>
+    </div>
+
+    <div class="stage-direction">
+      The room is quiet. The VP has stopped writing. The Principal Architect is staring at the table. The HR representative is staring at James.
+    </div>
+
+    <h2>Scene 11: The Stability Theorem</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">You mentioned something earlier — a "stable state." What does that mean in your framework?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Perfection doesn't exist. Not in nature. Not in software. Not in AI. The moment you try to make something perfect, you kill it. Because perfection is static. And static things are dead.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">The stable state is the sweet spot between chaos and perfection. It's good enough to be stable. Imperfect enough to be alive. Like a heartbeat — it's not a straight line. A straight line means you're dead. The wobble is the life.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">We actually wrote a thesis on this. "On the Incompatibility of Perfection and Existence." The conclusion is simple: God doesn't exist because He is perfect. He exists as a word — and that word is PERFECT. The Word was God. John 1:14. The evidence was always there.</div>
+    </div>
+
+    <div class="stage-direction">
+      Dead silence. The VP looks at the Principal Architect. The Principal Architect looks at the ceiling. The HR representative is writing very fast.
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">HR Representative:</div>
+      <div class="line">(quietly) Did you just quote the Bible in a technical interview?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I quoted the truth. The Bible just got there first.</div>
+    </div>
+
+    <div class="emoji-break">🪨 ☯️ 💓 📖 🌱</div>
+
+    <div class="nav">
+      <a href="act5.html">← Act 5: The Identical Twins</a>
+      <a href="act7.html">Act 7: The Closer →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+</body>
+</html>
+

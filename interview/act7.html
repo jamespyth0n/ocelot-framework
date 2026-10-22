@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 7 — The Closer | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    .credits { margin-top: 3rem; padding: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; text-align: center; }
+    .credits h3 { color: var(--accent); margin-bottom: 1rem; }
+    .credits p { color: var(--dim); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+  <div class="container">
+    <h1>Act 7 — The Closer</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <h2>Scene 12: The Final Question</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Last question, James. We always ask this. Why should we hire you?</div>
+    </div>
+
+    <div class="stage-direction">
+      James leans back. Looks at the ceiling. Looks at the three people across the table. Looks at his portfolio — still open to the single printed page. Closes it. Slowly.
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">You shouldn't.</div>
+    </div>
+
+    <div class="stage-direction">
+      The room freezes.
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">...Excuse me?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">You shouldn't hire me because of my resume. You shouldn't hire me because I can code, or because I know RAG pipelines, or because I built a library with 1,332 barcoded files. You shouldn't hire me because I can quote the Bible in a technical interview and somehow make it relevant.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">You should hire me because I know what a boiled egg is.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">(quietly) What does that mean?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">It means I know how to take something simple and make it work. Not make it perfect — make it work. I know how to sit on a bench with a moka pot and a napkin and turn a stupid question into a thesis. I know how to delegate to three AIs and a vape break and come back with a working prototype.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I know that genuine is better than perfect. That real is better than fake. That simple is better than complex. That done is better than in progress. That if the rule doesn't serve the spirit, you kill the rule. And that you protect the craft, not the ego.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I built a Kingdom on a Dell laptop. Not because I had to. Because the constraint forced the architecture to be golden. And now that architecture runs anywhere — on a desktop, on a server, on a phone. Because it was born in the fire.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">So no. Don't hire me because of what I've built. Hire me because of how I think. Because the way I think built everything else.</div>
+    </div>
+
+    <div class="stage-direction">
+      James stands up. Picks up his portfolio. Nods once. Walks to the door. Stops. Turns around.
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Oh. One more thing.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Yes?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I also studied culinary arts. So if the cafeteria needs help, I'm available.</div>
+    </div>
+
+    <div class="stage-direction">
+      James walks out. The door closes. The VP looks at the Principal Architect. The Principal Architect looks at HR. HR is still writing. The VP picks up his coffee. Takes a sip. Sets it down. Picks up his pen. Writes one word on his notepad. Underlines it three times. The word is: "HIRE."
+    </div>
+
+    <div class="emoji-break">🍳 🐆 🪨 ☕ 🌱</div>
+
+    <div class="credits">
+      <h3>THE INTERVIEW</h3>
+      <p>A Kingdom of Kwan Production</p>
+      <p>Written on napkins at El Café</p>
+      <p>Session S030 — October 2026</p>
+      <p>Calgary, Alberta, Canada</p>
+      <p style="margin-top: 1rem; color: var(--fg);">Based on actual events. Every single line actually happened.</p>
+      <p style="margin-top: 1rem;">☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+      <p style="margin-top: 0.5rem;">🌽📼🍄💊🍳</p>
+    </div>
+
+    <div class="nav">
+      <a href="act6.html">← Act 6: The Philosophy</a>
+      <a href="index.html">Back to The Interview →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+</body>
+</html>
+

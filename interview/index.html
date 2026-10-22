@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Interview — Kingdom of Kwan</title>
+  <style>
+    :root { --bg: #0d1117; --card-bg: #161b22; --text: #c9d1d9; --accent: #58a6ff; --border: #30363d; --muted: #8b949e; }
+    .light { --bg: #ffffff; --card-bg: #f6f8fa; --text: #24292f; --accent: #0969da; --border: #d0d7de; --muted: #656d76; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem; transition: background 0.3s, color 0.3s; }
+    .container { max-width: 720px; margin: 0 auto; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+    .nav-bar a { color: var(--accent); text-decoration: none; font-size: 0.9em; }
+    .nav-bar a:hover { text-decoration: underline; }
+    .theme-toggle { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+    h1 { font-size: 1.8em; margin-bottom: 0.3rem; }
+    .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: 0.95em; }
+    .card-grid { display: grid; gap: 1rem; }
+    .card { display: block; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card h3 { font-size: 1.1em; margin-bottom: 0.4rem; }
+    .card p { color: var(--muted); font-size: 0.9em; line-height: 1.4; }
+    .footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.8em; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-bar">
+      <a href="../index.html">← Back to Home</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+    </div>
+
+    <h1>🎬 The Interview</h1>
+    <p class="subtitle">A comedy in acts. Based on real events. Names unchanged because nobody would believe them anyway.</p>
+
+    <div class="card-grid">
+      <a href="act1.html" class="card">
+        <h3>🎬 Act I — The Resume</h3>
+        <p>"So how did you build this?" — "I blabbered, made a bad draft, and let the guys do the rest."</p>
+      </a>
+      <a href="act2.html" class="card">
+        <h3>🔥 Act II — The Architecture</h3>
+        <p>"You ran a 14-billion-parameter model with no dedicated GPU?" — "I know what a boiled egg is."</p>
+      </a>
+      <a href="act3.html" class="card">
+        <h3>🧪 Act III — The Boiled Egg</h3>
+        <p>"Show us the receipts." — Campaign 004, five questions, three voices, blind evaluation. The egg boils.</p>
+      </a>
+      <a href="act4.html" class="card">
+        <h3>📚 Act IV — The Evidence</h3>
+        <p>"Where does the knowledge live?" — 1,332 files. 45 folders. One index. The Library of Alexandria.</p>
+      </a>
+      <a href="act5.html" class="card">
+        <h3>💀 Act V — The Identical Twins</h3>
+        <p>"Change this to this." — "...they're the same." — "No, the BRACKET." — "You know what, I go for vape."</p>
+      </a>
+      <a href="act6.html" class="card">
+        <h3>🪨 Act VI — The Philosophy</h3>
+        <p>"Did you just quote the Bible in a technical interview?" — "I quoted the truth. The Bible just got there first."</p>
+      </a>
+      <a href="act7.html" class="card">
+        <h3>🚪 Act VII — The Closer</h3>
+        <p>"Any last words?" — "You can always buy more hardware. You can't buy correctness." *drops mic, exits*</p>
+      </a>
+    </div>
+
+    <p class="footer">☕ El Café — Kingdom of Kwan · Kapag lumago, di na hihinto. 🌱</p>
+  </div>
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+  </script>
+</body>
+</html>
+

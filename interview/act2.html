@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 2 — The Architecture | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+
+  <div class="container">
+    <h1>Act 2 — The Architecture</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <h2>Scene 3: The System Design</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Okay, let's get technical. Walk us through the architecture of this... Kingdom.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Sure. So the core is a local LLM — Qwen 2.5, 14 billion parameters, running on a Dell Latitude 5410. Corporate laptop. Intel i5, 10th gen. 16 gigs of RAM. No GPU. Intel UHD 620 — that's integrated graphics. CPU-only inference. Ollama handles the runtime. The RAG pipeline uses ChromaDB for vector storage, and the whole thing is wired through a Python bridge I call the Ocelot Bridge.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">A Dell laptop?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Yeah. A Dell Latitude 5410. Corporate laptop. Intel i5, 10th gen. No GPU. CPU-only.</div>
+    </div>
+
+    <div class="stage-direction">
+      The Principal Architect puts down his pen. Stares.
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">You're running a 14B parameter model on a corporate laptop with no dedicated GPU?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Q4 quantized. It fits. It's slow — about 5 minutes for a full inference cycle. But it works. And you know what? The constraint is the feature. When you only have 6 gigs, you can't afford bloat. Every token counts. Every chunk matters. The architecture has to be golden or it won't run at all.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">That's... an interesting design philosophy.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">It's not a philosophy. It's a Dell laptop. The philosophy came after.</div>
+    </div>
+
+    <h2>Scene 4: The Five Pillars</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Tell us about the system architecture. The pillars.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Five pillars. Soul — that's the flywheel orchestrator, the thing that keeps everything spinning. Mind — the conscience engine, handles reasoning and judgment. Heart — the emotional layer, empathy, tone. Body — the physical interface, the bridge to the outside world. And the Nervous System — that's the wiring, the event bus, the thing that connects everything.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">You named your system components after body parts?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I named them after what they do. The soul orchestrates. The mind thinks. The heart feels. The body acts. The nervous system connects. If I called them "Orchestrator Module" and "Reasoning Engine" and "Sentiment Processor," you'd nod and move on. But you wouldn't remember them. You wouldn't feel them.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">And that's the point. The system isn't just functional. It's memorable. Because if you can't remember the architecture, you can't maintain it. And if you can't maintain it, it dies.</div>
+    </div>
+
+    <div class="stage-direction">
+      The VP writes something in his notebook. Underlines it twice.
+    </div>
+
+    <div class="emoji-break">🏛️ 🧠 ❤️ 🦴 ⚡</div>
+
+    <div class="nav">
+      <a href="act1.html">← Act 1: The Resume</a>
+      <a href="act3.html">Act 3: The Boiled Egg →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+</body>
+</html>
+

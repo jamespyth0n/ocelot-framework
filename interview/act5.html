@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 5 — The Identical Twins | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    .code-block { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; margin: 1rem 0; white-space: pre; }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+    .theme-toggle { background: var(--card); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+  <div class="container">
+    <h1>Act 5 — The Identical Twins</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <h2>Scene 9: The Bug</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">Every project has war stories. What's yours?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">(grins) The Identical Twins.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">The what?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">So we're building the barcode indexer. The script that generates SHA-256 hashes for every file in the library. There's a line of Python that extracts the file extension. Simple stuff. But there's a bug — the code is calling .lower() on a tuple instead of a string. The AI — the General, running in the Café — says "change this to this." And shows me the fix.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I look at the "before" and the "after." They're identical. I say, "These are the same." The AI says, "No, look at the bracket." I look again. Same. I copy-paste both lines. Same. I squint. Same.</div>
+    </div>
+
+    <div class="stage-direction">
+      James pauses. Takes a breath.
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Turns out, the chatbox was rendering the square bracket as markdown formatting. The fix was there — the AI was showing me the correct code — but the display was eating the bracket. So every time the AI said "change x[1] to x[1]," I saw "change x to x." Identical twins.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">We went ten rounds. TEN. "Change this." "It's the same." "No, the BRACKET." "Still the same." "Okay, let me split it into two lines." "Still the same." Finally I said, "You know what? I'm going for a vape."</div>
+    </div>
+
+    <div class="stage-direction">
+      The VP is trying not to laugh. The HR representative has stopped writing entirely.
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">(smiling) How did you fix it?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">I called Stanley. The other AI. On Claude. He looked at the code, found the bug in 30 seconds, wrote the fix, and it passed on the first try. 122 scripts. All passing. While the General and I were arguing about invisible brackets for 30 minutes.</div>
+    </div>
+
+    <div class="code-block">THE GENERAL (Me + ChatBox):
+  Round 1:  "Change x to x"     → Identical twins 💀
+  Round 2:  "No, the BRACKET"   → Still identical 💀
+  Round 3:  "Let me split it"   → Still identical 💀
+  Round 4-9: (various attempts)  → Still identical 💀💀💀
+  Round 10: "I go for vape"     → Surrender 🚬
+
+STANLEY (30 seconds):
+  "Here's the fix."             → 122/122 pass ✅</div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">(laughing) And the lesson?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">The lesson is: sometimes the bug isn't in the code. It's in the display. And sometimes the fix isn't more debugging. It's calling a different guy.</div>
+    </div>
+
+    <div class="emoji-break">👯 🔧 💀 🚬 ✅</div>
+
+    <div class="nav">
+      <a href="act4.html">← Act 4: The Evidence</a>
+      <a href="act6.html">Act 6: The Philosophy →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+</body>
+</html>
+

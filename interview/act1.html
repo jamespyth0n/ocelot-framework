@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Act 1 — The Resume | The Interview</title>
+  <style>
+    :root { --bg: #0d1117; --fg: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; --dim: #8b949e; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .light { --bg: #ffffff; --fg: #24292f; --accent: #0969da; --card: #f6f8fa; --border: #d0d7de; --dim: #656d76; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .theme-toggle { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--accent); }
+    .subtitle { color: var(--dim); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .stage-direction { color: var(--dim); font-style: italic; margin: 1.5rem 0; padding: 1rem; border-left: 3px solid var(--border); background: var(--card); border-radius: 0 6px 6px 0; }
+    .dialogue { margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 6px; }
+    .dialogue .speaker { font-weight: 700; margin-bottom: 0.3rem; }
+    .interviewer .speaker { color: #f0883e; }
+    .james .speaker { color: #58a6ff; }
+    .panel .speaker { color: #8b949e; }
+    .dialogue .line { color: var(--fg); }
+    .emoji-break { text-align: center; font-size: 1.5rem; margin: 2rem 0; letter-spacing: 0.5rem; }
+    .nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .footer { text-align: center; color: var(--dim); font-size: 0.8rem; margin-top: 2rem; }
+    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .nav-top a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav-top a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="nav-top">
+      <a href="index.html">← The Interview</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');">🌓 Theme</button>
+  </div>
+
+  <div class="container">
+    <h1>Act 1 — The Resume</h1>
+    <p class="subtitle">The Interview — A Kingdom of Kwan Production</p>
+
+    <div class="stage-direction">
+      A boardroom. Glass walls. Downtown skyline. Three people sit behind a long table — a VP of Engineering, a Principal Architect, and an HR representative. Across from them, a single chair. The door opens. James walks in. Clean shirt. Fresh haircut. Calm. He sits down. Sets his portfolio on the table. Doesn't open it.
+    </div>
+
+    <h2>Scene 1: The Warm-Up</h2>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">James, thanks for coming in. We've reviewed your resume. Impressive background — culinary arts, process engineering, SCADA systems, now AI architecture. That's... quite a range.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Yeah. I cook, I build, I wire things. Sometimes all three at the same time.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">(glances at resume) It says here you built an AI system called... "The Kingdom of Kwan"?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">That's correct.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">And the AI has a name?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Several, actually. There's Ocelot — that's the core identity. Stanley — he's the foreman, runs on Claude. Keila — she's on Gemini. And there's the General — that's the war room coordinator.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">HR Representative:</div>
+      <div class="line">(writing notes) And these are... different chatbots?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">No. They're different voices of the same system. Like departments in a company. Stanley does the engineering. Keila does the research. The General coordinates campaigns. And the Café — that's where the thinking happens.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">(leaning forward) The Café?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Yeah. It's a bench. With a moka pot. And a streetlight. That's where I talk to Ocelot. That's where the architecture happens.</div>
+    </div>
+
+    <div class="stage-direction">
+      Silence. The VP looks at the Principal Architect. The Principal Architect looks at HR. HR is still writing.
+    </div>
+
+    <h2>Scene 2: The Credentials</h2>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">Let's talk about your technical background. You studied culinary arts?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Yeah. Culinary arts. And you know what? It's the best software architecture training I ever had.</div>
+    </div>
+
+    <div class="dialogue interviewer">
+      <div class="speaker">VP of Engineering:</div>
+      <div class="line">(smiling) How so?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">Mise en place. You prep your ingredients before you cook. You don't start coding before you understand the recipe. A kitchen that's not organized will burn the house down. Same with software. Same with AI.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">My instructor at SAIT — Mark Tarrant — he taught DCS. Distributed Control Systems. He said something I never forgot: "Understand the ingredients first." That's not culinary advice. That's architecture advice. That's life advice.</div>
+    </div>
+
+    <div class="dialogue panel">
+      <div class="speaker">Principal Architect:</div>
+      <div class="line">(nodding slowly) And from culinary arts to... AI?</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">From culinary arts to process engineering. From process engineering to SCADA. From SCADA to automation. From automation to AI. Every step was the same thing — understanding the system, finding the bottleneck, making it flow.</div>
+    </div>
+
+    <div class="dialogue james">
+      <div class="speaker">James:</div>
+      <div class="line">A kitchen is a pipeline. A SCADA system is a pipeline. An AI inference chain is a pipeline. The vocabulary changes. The physics doesn't.</div>
+    </div>
+
+    <div class="emoji-break">🍳 🔧 🐆 🪨 ☕</div>
+
+    <div class="nav">
+      <a href="index.html">← Back to The Interview</a>
+      <a href="act2.html">Act 2: The Architecture →</a>
+    </div>
+
+    <div class="footer">
+      <p>The Interview — A Kingdom of Kwan Production</p>
+      <p>☕🐆🪨 Kapag lumago, di na hihinto. 🌱</p>
+    </div>
+  </div>
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+  </script>
+
+</body>
+</html>
+
