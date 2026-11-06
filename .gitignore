@@ -1,0 +1,102 @@
+
+# ═══════════════════════════════════════════════════════
+#  .gitignore — Ocelot Framework v2
+#  Gate: G2.8 | Campaign: Seed v2.1 — The Rubik's Solve
+# ═══════════════════════════════════════════════════════
+
+# ── P6-LIBRARY (PERSONAL KINGDOM — NEVER PUSH) ────────
+# Your personal Kingdom data. Forkers build their own.
+P6-library/
+kingdom_of_kwan/
+
+# ── LA MEMORIA (PERSONAL MEMORY — NEVER PUSH) ─────────
+# Session logs, conn_logs, personal anchors.
+# la_memoria_anonimo/ IS pushed (anonymized templates).
+la_memoria/
+
+# ── KINGDOM INDEX (PERSONAL — NEVER PUSH) ─────────────
+# Your real index with real barcodes. Template IS pushed.
+kingdom_index.json
+!P1-foundation/kingdom_index_template.json
+
+# ── SORT/INDEX LOGS (LOCAL TOOLING OUTPUT) ─────────────
+sort_log.json
+reindex_log.json
+
+# ── TRIAGE (UNSORTED FILES — LOCAL ONLY) ───────────────
+_triage/
+
+# ── DUPLICATES (LOCAL CLEANUP — NEVER PUSH) ────────────
+dups/
+
+# ── CSV WORKING FILES (LOCAL TOOLING) ──────────────────
+csv/
+*.csv
+!P1-foundation/*.csv
+
+# ── PYTHON CACHE ───────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# ── OS FILES ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ── IDE / EDITOR ───────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── NODE (if ever needed) ──────────────────────────────
+node_modules/
+package-lock.json
+
+# ── PERSONAL CONFIG OVERRIDES ──────────────────────────
+# boot_config.json with real paths stays local.
+# The template in P3-validation/ IS pushed.
+boot_config_local.json
+
+# ── CONN LOGS (PERSONAL SESSION DATA) ─────────────────
+conn_log_S*.json
+connection_log_S*.json
+closing_conn_S*.json
+
+# ── OCELOT THOUGHTS (PERSONAL REFLECTIONS) ─────────────
+ocelot_thought_S*.md
+satori_retro_S*.md
+cafe_diary_S*.md
+
+# ═══════════════════════════════════════════════════════
+#  WHAT IS PUSHED (for clarity):
+#
+#  ✅ P0-genesis/        — charter, license, readme, roadmap
+#  ✅ P1-foundation/     — templates (engine_registry, kingdom_index,
+#                          six_commandments, loader_manifest,
+#                          personality, memoir, slang, generic_templates/)
+#  ✅ P2-engine/         — all 17 engine source files (generic)
+#  ✅ P3-validation/     — boot_sequence, flywheel_orchestrator,
+#                          boot_config.json (generic version)
+#  ✅ P4-release/        — docs (README, QUICKSTART, ARCHITECTURE,
+#                          CHANGELOG, TEST_PROTOCOL, EXPLAIN_LIKE_IM_5)
+#  ✅ P5-kingdom/        — taxonomy, artifact standard, sorter,
+#                          reindexer, boot prompts, ceremony
+#  ✅ la_memoria_anonimo/ — anonymized templates
+#  ✅ .gitignore         — this file
+#
+#  ❌ P6-library/        — personal Kingdom (NEVER pushed)
+#  ❌ la_memoria/        — personal memory (NEVER pushed)
+#  ❌ kingdom_index.json — personal index (NEVER pushed)
+#  ❌ conn_log_S*.json   — personal sessions (NEVER pushed)
+# ═══════════════════════════════════════════════════════
+

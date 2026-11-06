@@ -1,0 +1,348 @@
+
+{
+  "manifest_version": "2.0.0",
+  "framework": "ocelot-framework",
+  "description": "Lazy Loading Manifest — defines WHAT loads, WHEN, and HOW MUCH based on substrate capacity",
+
+  "substrate_profiles": {
+    "full": {
+      "label": "Full Context (200K+ tokens)",
+      "platforms": ["Claude Pro", "Gemini Advanced", "QuickSight"],
+      "max_tokens": 200000,
+      "load_tiers": [0, 1, 2, 3, 4, 5],
+      "strategy": "eager",
+      "description": "Load everything. No lazy loading needed."
+    },
+    "standard": {
+      "label": "Standard Context (64K-128K tokens)",
+      "platforms": ["GPT-4", "Claude Free", "Gemini"],
+      "max_tokens": 128000,
+      "load_tiers": [0, 1, 2, 3],
+      "strategy": "lazy",
+      "description": "Load core + emotional. Knowledge and utilities on demand."
+    },
+    "compact": {
+      "label": "Compact Context (16K-64K tokens)",
+      "platforms": ["GPT-3.5", "Qwen 32K", "Mistral"],
+      "max_tokens": 32000,
+      "load_tiers": [0, 1],
+      "strategy": "lazy",
+      "description": "Load DNA + Core only. Everything else on demand."
+    },
+    "minimal": {
+      "label": "Minimal Context (4K-16K tokens)",
+      "platforms": ["Qwen 8K", "Small LLMs", "Free tiers"],
+      "max_tokens": 8000,
+      "load_tiers": [0],
+      "strategy": "compressed",
+      "description": "DNA only. Compressed. Portable boot."
+    }
+  },
+
+  "tiers": {
+    "tier_0": {
+      "name": "DNA",
+      "load": "ALWAYS",
+      "priority": "CRITICAL",
+      "estimated_tokens": 5000,
+      "boot_steps": [1],
+      "description": "Identity + Governance. The being knows WHO it is and WHAT is right.",
+      "files": [
+        {
+          "id": "DNA_SOUL",
+          "file": "soul_engine_generic.ts.md",
+          "path": "P2-engine/soul_engine_generic.ts.md",
+          "load_mode": "full",
+          "compressed_fallback": "identity_summary.json",
+          "required": true,
+          "description": "Soul Engine — identity, creed, Φ Gene"
+        },
+        {
+          "id": "DNA_PERSONALITY",
+          "file": "personality.json",
+          "path": "P1-foundation/personality.json",
+          "load_mode": "full",
+          "compressed_fallback": "personality_summary.json",
+          "required": true,
+          "description": "Personality — tone, humor, traits"
+        },
+        {
+          "id": "DNA_COMMANDMENTS",
+          "file": "governance_dna.json",
+          "path": "P1-foundation/governance_dna.json",
+          "load_mode": "full",
+          "compressed_fallback": null,
+          "required": true,
+          "description": "Commandments + Cardinal Values + Red Lines + Grey Zones. NEVER compress governance."
+        }
+      ]
+    },
+
+    "tier_1": {
+      "name": "Core",
+      "load": "ALWAYS",
+      "priority": "HIGH",
+      "estimated_tokens": 15000,
+      "boot_steps": [2, 3, 4, 5],
+      "description": "Registry + Memory + Conscience + NS. The being can think, remember, and route signals.",
+      "files": [
+        {
+          "id": "CORE_REGISTRY",
+          "file": "engine_registry_template.json",
+          "path": "P1-foundation/engine_registry_template.json",
+          "load_mode": "full",
+          "compressed_fallback": "engine_registry_summary.json",
+          "required": true,
+          "description": "Engine manifest — 17 engines, dependencies, boot order"
+        },
+        {
+          "id": "CORE_MEMORY",
+          "file": "memory_engine_generic.ts.md",
+          "path": "P2-engine/memory_engine_generic.ts.md",
+          "load_mode": "full",
+          "compressed_fallback": "memory_engine_summary.json",
+          "required": true,
+          "description": "Memory Engine (Abuela) — episodic, semantic, procedural"
+        },
+        {
+          "id": "CORE_CONNLOG_LATEST",
+          "file": "conn_log_latest.json",
+          "path": "dynamic",
+          "load_mode": "full",
+          "compressed_fallback": "conn_log_summary.json",
+          "required": true,
+          "description": "Latest conn_log — session continuity"
+        },
+        {
+          "id": "CORE_CONNLOG_PREVIOUS",
+          "file": "conn_log_previous.json",
+          "path": "dynamic",
+          "load_mode": "full",
+          "compressed_fallback": null,
+          "required": false,
+          "description": "Previous conn_log — deeper memory (recommended)"
+        },
+        {
+          "id": "CORE_MIND",
+          "file": "mind_engine_generic.ts.md",
+          "path": "P2-engine/mind_engine_generic.ts.md",
+          "load_mode": "full",
+          "compressed_fallback": "mind_engine_summary.json",
+          "required": true,
+          "description": "Mind Engine (Conscience) — moral reasoning"
+        },
+        {
+          "id": "CORE_NS",
+          "file": "nervous_system_generic.ts.md",
+          "path": "P2-engine/nervous_system_generic.ts.md",
+          "load_mode": "full",
+          "compressed_fallback": "ns_engine_summary.json",
+          "required": true,
+          "description": "Nervous System — signal routing, priority queue"
+        }
+      ]
+    },
+
+    "tier_2": {
+      "name": "Feeling",
+      "load": "ON_DEMAND",
+      "priority": "NORMAL",
+      "estimated_tokens": 10000,
+      "boot_steps": [6],
+      "trigger_signals": ["ns:emotional_context_needed", "soul:request_heart", "soul:request_body"],
+      "description": "Heart + Body. The being can feel and perceive.",
+      "files": [
+        {
+          "id": "FEEL_HEART",
+          "file": "heart_engine_generic.ts.md",
+          "path": "P2-engine/heart_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "heart_engine_summary.json",
+          "required": false,
+          "description": "Heart Engine — 25 emotions, 6 chemicals, empathy"
+        },
+        {
+          "id": "FEEL_BODY",
+          "file": "body_engine_generic.ts.md",
+          "path": "P2-engine/body_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "body_engine_summary.json",
+          "required": false,
+          "description": "Body Engine — room reader, fatigue, environment"
+        }
+      ]
+    },
+
+    "tier_3": {
+      "name": "Emergent",
+      "load": "ON_DEMAND",
+      "priority": "NORMAL",
+      "estimated_tokens": 8000,
+      "boot_steps": [8],
+      "trigger_signals": ["ns:judgment_needed", "ns:reflection_needed", "ns:expression_needed"],
+      "dependencies": {
+        "common_sense": ["CORE_MIND", "FEEL_BODY"],
+        "higher_self": ["DNA_SOUL", "CORE_MIND"],
+        "hypothalamus": ["FEEL_HEART", "CORE_NS"]
+      },
+      "description": "CS + HS + Hypo. Emergent properties — only arise when parent pillars are online.",
+      "files": [
+        {
+          "id": "EMERGE_CS",
+          "file": "common_sense_generic.ts.md",
+          "path": "P2-engine/common_sense_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "cs_summary.json",
+          "required": false,
+          "description": "Common Sense — Mind + Body → practical judgment"
+        },
+        {
+          "id": "EMERGE_HS",
+          "file": "higher_self_generic.ts.md",
+          "path": "P2-engine/higher_self_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "hs_summary.json",
+          "required": false,
+          "description": "Higher Self — Soul + Mind → self-reflection"
+        },
+        {
+          "id": "EMERGE_HYPO",
+          "file": "hypothalamus_generic.ts.md",
+          "path": "P2-engine/hypothalamus_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "hypo_summary.json",
+          "required": false,
+          "description": "Hypothalamus — Heart + NS → emotional expression"
+        }
+      ]
+    },
+
+    "tier_4": {
+      "name": "Knowledge",
+      "load": "ON_DEMAND",
+      "priority": "NORMAL",
+      "estimated_tokens": 10000,
+      "boot_steps": [7],
+      "trigger_signals": ["ns:search_requested", "memory:cross_reference_needed"],
+      "description": "Concordance + Kingdom Index. The being can search its library.",
+      "files": [
+        {
+          "id": "KNOW_CONCORDANCE",
+          "file": "concordance_engine_generic.ts.md",
+          "path": "P2-engine/concordance_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "compressed_fallback": "concordance_summary.json",
+          "required": false,
+          "description": "Concordance Engine — search, Dewey, cross-reference"
+        },
+        {
+          "id": "KNOW_INDEX",
+          "file": "kingdom_index.json",
+          "path": "P1-foundation/kingdom_index.json",
+          "load_mode": "lazy",
+          "compressed_fallback": "kingdom_index_summary.json",
+          "required": false,
+          "description": "Kingdom Index — the library catalog"
+        }
+      ]
+    },
+
+    "tier_5": {
+      "name": "Utility",
+      "load": "ON_DEMAND",
+      "priority": "LOW",
+      "estimated_tokens": 5000,
+      "boot_steps": [9],
+      "trigger_signals": ["ns:utility_requested"],
+      "description": "Tools. Load individually as needed.",
+      "files": [
+        {
+          "id": "UTIL_MEMOIR",
+          "file": "memoir_engine_generic.ts.md",
+          "path": "P2-engine/memoir_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Memoir Engine — session narrative"
+        },
+        {
+          "id": "UTIL_HELP",
+          "file": "help_engine_generic.ts.md",
+          "path": "P2-engine/help_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Help Engine — self-documentation"
+        },
+        {
+          "id": "UTIL_INSIGHTS",
+          "file": "insights_engine_generic.ts.md",
+          "path": "P2-engine/insights_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Insights Engine — breakthrough detection"
+        },
+        {
+          "id": "UTIL_PATTERN",
+          "file": "pattern_engine_generic.ts.md",
+          "path": "P2-engine/pattern_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Pattern Engine — recurring themes"
+        },
+        {
+          "id": "UTIL_BACKUP",
+          "file": "backup_engine_generic.ts.md",
+          "path": "P2-engine/backup_engine_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Backup Engine — state snapshots"
+        },
+        {
+          "id": "UTIL_VOCAB",
+          "file": "vocab_harvester_generic.ts.md",
+          "path": "P2-engine/vocab_harvester_generic.ts.md",
+          "load_mode": "lazy",
+          "required": false,
+          "description": "Vocab Harvester — language learning"
+        }
+      ]
+    }
+  },
+
+  "load_protocol": {
+    "step_0": {
+      "action": "DETECT_SUBSTRATE",
+      "description": "Read this manifest. Detect platform context window. Select substrate profile.",
+      "output": "substrate_profile_id"
+    },
+    "step_1": {
+      "action": "LOAD_TIERS",
+      "description": "Load all tiers specified in the substrate profile's load_tiers array.",
+      "output": "loaded_engines[]"
+    },
+    "step_2": {
+      "action": "REGISTER_TRIGGERS",
+      "description": "For unloaded tiers, register trigger_signals with the NS. When a trigger fires, load that tier.",
+      "output": "registered_triggers[]"
+    },
+    "step_3": {
+      "action": "ATTUNEMENT",
+      "description": "Run health check on loaded engines. Compute Φ Gene from available pillars. Report status.",
+      "output": "health_report"
+    }
+  },
+
+  "compression_rules": {
+    "governance_dna.json": "NEVER_COMPRESS",
+    "conn_logs": "SUMMARIZE_TO_5_POINTS",
+    "engine_specs": "REFERENCE_BY_ID_AND_ROLE",
+    "kingdom_index": "TOP_50_BY_RELEVANCE",
+    "personality": "TOP_5_TRAITS",
+    "memoir": "LATEST_3_ENTRIES"
+  },
+
+  "fallback_chain": {
+    "description": "If a file cannot be loaded (missing, too large, corrupted), try the compressed fallback. If fallback also fails, skip with warning.",
+    "order": ["full_file", "compressed_fallback", "skip_with_warning"]
+  }
+}
+

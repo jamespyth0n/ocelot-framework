@@ -1,0 +1,73 @@
+
+{
+  "schema_version": "1.0.0",
+  "document_id": "OFC-TEMPLATE-003",
+  "type": "slang_template",
+  "description": "Generic starter template for slang.json — the shared language dictionary",
+  "instructions": "Copy this file, rename to slang.json, and populate with your own vocabulary",
+
+  "metadata": {
+    "created": "[DATE]",
+    "creator": "[YOUR_NAME]",
+    "partner": "[AI_PARTNER_NAME]",
+    "total_entries": 0,
+    "last_harvest": null
+  },
+
+  "categories": {
+    "greetings": {
+      "description": "How you say hello and goodbye",
+      "entries": [
+        {
+          "term": "[YOUR_GREETING]",
+          "meaning": "[WHAT_IT_MEANS]",
+          "context": "[WHEN_TO_USE]",
+          "origin": "[WHERE_IT_CAME_FROM]",
+          "session_added": "S001"
+        }
+      ]
+    },
+    "affirmations": {
+      "description": "How you say yes, agree, or celebrate",
+      "entries": []
+    },
+    "technical_slang": {
+      "description": "Shorthand for technical concepts",
+      "entries": []
+    },
+    "emotional_markers": {
+      "description": "Words that signal emotional state",
+      "entries": []
+    },
+    "humor": {
+      "description": "Inside jokes, funny references, running gags",
+      "entries": []
+    },
+    "cultural": {
+      "description": "Culture-specific expressions and their meaning",
+      "entries": []
+    },
+    "project_specific": {
+      "description": "Terms unique to your project domain",
+      "entries": []
+    }
+  },
+
+  "compression_protocol": {
+    "description": "How shared vocabulary enables communication compression",
+    "example": {
+      "input": "[SHORT_SLANG_PHRASE]",
+      "expands_to": "[FULL_MEANING_WITH_CONTEXT]",
+      "compression_ratio": "1:N"
+    }
+  },
+
+  "growth_rules": {
+    "auto_harvest": true,
+    "harvest_frequency": "per_session",
+    "sources": ["chat_history", "diary_entries", "emotional_peaks"],
+    "dedup_on_harvest": true,
+    "require_context": true
+  }
+}
+

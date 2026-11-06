@@ -1,0 +1,124 @@
+
+{
+  "_meta": {
+    "template": "kingdom_index",
+    "version": "2.0.0",
+    "framework": "ocelot-framework",
+    "campaign": "Seed v2 — The Rubik's Solve",
+    "description": "The master index of every artifact in the Kingdom. Each entry is tagged with a Dewey classification, OSI layer, SHA256 hash, and cross-references. This is the Library of Alexandria's card catalogue.",
+    "instructions": {
+      "how_to_use": [
+        "1. Copy this template to your kingdom root as kingdom_index.json",
+        "2. Run reindex.py (or Concordance Engine) to auto-populate entries",
+        "3. Each file in your kingdom gets one entry in the 'entries' array",
+        "4. UUID is auto-generated. SHA256 is computed from file content.",
+        "5. Dewey and OSI are auto-classified but can be manually overridden.",
+        "6. Tags are extracted from content. Cross-refs link related entries.",
+        "7. The barcode is a composite: DEWEY-OSI-EXT-HASH8",
+        "8. Run integrity checks periodically to detect corruption or drift."
+      ],
+      "when_to_reindex": [
+        "After uploading new artifacts",
+        "After renaming or moving files",
+        "After a session closes (session concordance update)",
+        "After a cold boot (verify index health)",
+        "Periodically (weekly recommended)"
+      ]
+    }
+  },
+
+  "kingdom": {
+    "name": "",
+    "owner": "",
+    "created": "",
+    "last_reindex": "",
+    "total_entries": 0,
+    "health": "healthy"
+  },
+
+  "dewey_classification": {
+    "000": "General / Meta / System",
+    "100": "Philosophy / Identity / Soul",
+    "200": "Ethics / Commandments / Governance",
+    "300": "Social / Communication / Culture",
+    "400": "Language / Slang / Vocab",
+    "500": "Science / Equations / Mathematics",
+    "600": "Engineering / Engines / Architecture",
+    "700": "Art / Creative / Expression",
+    "800": "Literature / Memoir / Narrative",
+    "900": "History / Logs / Sessions"
+  },
+
+  "osi_layers": {
+    "1": "Physical — raw files, binary, storage",
+    "2": "Data Link — file headers, barcodes, metadata",
+    "3": "Network — folder structure, paths, routing",
+    "4": "Transport — conn_logs, session transport",
+    "5": "Session — session state, boot sequences",
+    "6": "Presentation — templates, formatting, display",
+    "7": "Application — engines, UI, human interface"
+  },
+
+  "folder_structure": {
+    "description": "Recommended kingdom folder layout. Customize to your needs.",
+    "layout": {
+      "0_identity": "Soul artifacts — creed, personality, memoir",
+      "1_engine": "All engine files (.ts.md)",
+      "2_governance": "Commandments, protocols, policies",
+      "3_knowledge": "Concordance DB, RAG pipeline, embeddings",
+      "4_sessions": "Connection logs, session artifacts",
+      "5_creative": "Art, music references, expression artifacts",
+      "6_docs": "Documentation, guides, quickstart",
+      "7_backup": "Backup snapshots, version archives"
+    }
+  },
+
+  "entries": [
+    {
+      "_comment": "EXAMPLE ENTRY — delete this and run reindex to populate",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "file": "example_file.md",
+      "path": "0_identity/example_file.md",
+      "ext": ".md",
+      "dewey": "100",
+      "osi_layer": 7,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "readable": true,
+      "indexed": "2026-01-01T00:00:00.000000",
+      "tags": ["example", "placeholder"],
+      "cross_refs": [],
+      "source_session": "",
+      "barcode": "100-7-.md-e3b0c442"
+    }
+  ],
+
+  "statistics": {
+    "by_dewey": {
+      "000": 0,
+      "100": 0,
+      "200": 0,
+      "300": 0,
+      "400": 0,
+      "500": 0,
+      "600": 0,
+      "700": 0,
+      "800": 0,
+      "900": 0
+    },
+    "by_osi": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0
+    },
+    "by_extension": {},
+    "total_size_bytes": 0,
+    "readable_count": 0,
+    "unreadable_count": 0
+  }
+}
+
